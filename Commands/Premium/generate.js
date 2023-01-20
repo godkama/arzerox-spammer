@@ -8,7 +8,7 @@ const {
 } = require("discord.js");
 const moment = require("moment");
 const voucher_codes = require("voucher-code-generator");
-const schema = require("../../Models/Code");
+const schema = require("../../Models/code");
 
 module.exports = {
   data: new SlashCommandBuilder()
