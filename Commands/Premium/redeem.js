@@ -5,7 +5,7 @@ const {
   Client,
 } = require("discord.js");
 const moment = require("moment");
-const Code = require("../../Models/Code");
+const Code = require("../../Models/code");
 const User = require("../../Models/User");
 
 module.exports = {
