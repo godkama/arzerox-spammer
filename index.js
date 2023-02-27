@@ -12,8 +12,8 @@ const client = new Client({
   intents: [Guilds, GuildMembers, GuildMessages],
   partials: [User, Message, GuildMember, ThreadMember],
 });
-client.login(client.config.TOKEN);
 client.config = require("./config.json");
+client.login(client.config.TOKEN);
 let aSName = `
 
 ▄▄▄       ██▀███  ▒███████▒▓█████  ██▀███   ▒█████  ▒██   ██▒  ██████  ██▓███   ▄▄▄       ███▄ ▄███▓ ███▄ ▄███▓▓█████  ██▀███  
