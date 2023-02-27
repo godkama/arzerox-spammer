@@ -35,7 +35,7 @@ client.on('ready', () => {
    `;
 
   console.clear();
-  console.log(red(aSName));
+  console.log((aSName);
 });
 
 client.on('message', async (message) => {
