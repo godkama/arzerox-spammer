@@ -14,7 +14,8 @@ const client = new Client({
 });
 client.config = require("./config.json");
 client.login(client.config.TOKEN);
-let aSName = `
+client.on('ready', () => {
+  let aSName = `
 
 ▄▄▄       ██▀███  ▒███████▒▓█████  ██▀███   ▒█████  ▒██   ██▒  ██████  ██▓███   ▄▄▄       ███▄ ▄███▓ ███▄ ▄███▓▓█████  ██▀███  
 ▒████▄    ▓██ ▒ ██▒▒ ▒ ▒ ▄▀░▓█   ▀ ▓██ ▒ ██▒▒██▒  ██▒▒▒ █ █ ▒░▒██    ▒ ▓██░  ██▒▒████▄    ▓██▒▀█▀ ██▒▓██▒▀█▀ ██▒▓█   ▀ ▓██ ▒ ██▒
@@ -32,7 +33,7 @@ let aSName = `
                    Nuker: ${client.user.tag}
                    Prefix: ${client.config.prefix}
    `;
-client.on('ready', () => {
+
   console.clear();
   console.log(red(aSName));
 });
