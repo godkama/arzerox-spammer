@@ -12,6 +12,7 @@ const client = new Client({
   intents: [Guilds, GuildMembers, GuildMessages],
   partials: [User, Message, GuildMember, ThreadMember],
 });
+client.login(client.config.TOKEN);
 client.config = require("./config.json");
 let aSName = `
 
@@ -56,5 +57,3 @@ if( message.content.toLowerCase().startsWith(client.config.prefix + "nuke")) {
     }, 1);
   }
 });
-
-client.login(client.config.TOKEN);
