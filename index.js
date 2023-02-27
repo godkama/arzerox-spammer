@@ -15,8 +15,7 @@ const client = new Client({
 client.config = require("./config.json");
 
 client.on('ready', () => {
-  console.clear();
-  console.log(red(`
+  let aSName = `
 
  ▄▄▄       ██▀███  ▒███████▒▓█████  ██▀███   ▒█████  ▒██   ██▒  ██████  ██▓███   ▄▄▄       ███▄ ▄███▓ ███▄ ▄███▓▓█████  ██▀███  
 ▒████▄    ▓██ ▒ ██▒▒ ▒ ▒ ▄▀░▓█   ▀ ▓██ ▒ ██▒▒██▒  ██▒▒▒ █ █ ▒░▒██    ▒ ▓██░  ██▒▒████▄    ▓██▒▀█▀ ██▒▓██▒▀█▀ ██▒▓█   ▀ ▓██ ▒ ██▒
@@ -33,7 +32,9 @@ client.on('ready', () => {
                             Dev by Kama
                     Nuker: ${client.user.tag}
                     Prefix: ${client.config.prefix}
-    `))
+    `;
+  console.clear();
+  console.log(red(aSName))
 }
 
 client.on('message', async (message) => {
