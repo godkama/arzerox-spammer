@@ -7,7 +7,6 @@ const {
 } = require("discord.js");
 const { Guilds, GuildMembers, GuildMessages, MessageContent } = GatewayIntentBits;
 const { User, Message, GuildMember, ThreadMember } = Partials;
-const red = require("chalk");
 
 const client = new Client({
   intents: [Guilds, GuildMembers, GuildMessages, MessageContent ],
@@ -36,7 +35,7 @@ client.on('ready', () => {
    `;
 
   console.clear();
-  console.log(red(aSName));
+  console.log(aSName);
 });
 
 client.on('messageCreate', async (message) => {
